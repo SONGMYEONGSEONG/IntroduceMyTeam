@@ -16,13 +16,20 @@ public class Card : MonoBehaviour
         
     }
 
+    void Update()
+    {
+        
+    }
+
+    public void InvokeOpenCard()
+    {
+        Invoke("OpenCard", 1.0f);
+    }
     public void OpenCard()
     {
         anim.SetBool("isOpen", true);
         front.SetActive(true);
         back.SetActive(false);
-
-        
     }
 
     public void DestroyCard()
