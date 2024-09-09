@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: FindRtan_git
+  companyName: SCC_9
+  productName: IntroduceMyTeam
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -719,8 +719,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: FindRtan_git
-  metroPackageVersion: 
+  metroPackageName: FindRtangit
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -728,7 +728,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: FindRtan_git
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: FindRtan_git
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
