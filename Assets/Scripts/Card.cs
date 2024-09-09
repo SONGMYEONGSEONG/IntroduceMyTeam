@@ -30,11 +30,17 @@ public class Card : MonoBehaviour
         anim.SetBool("isOpen", true);
         front.SetActive(true);
         back.SetActive(false);
+        
+        
+        AudioManager.instance.PlaySFX("flip");
+
+        GameManager.Instance.firstCard = null;
+        GameManager.Instance.secondCard = null;
     }
 
     public void DestroyCard()
     {
-        Destroy(this);
+        Destroy(gameObject);
     }
 
     public void InvokeDestroyCard()
