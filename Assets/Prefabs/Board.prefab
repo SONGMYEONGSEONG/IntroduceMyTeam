@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xAdjustment: -2
-  yAdjustment: -2
+  yAdjustment: -3
   card: {fileID: 0}
