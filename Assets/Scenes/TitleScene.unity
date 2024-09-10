@@ -223,6 +223,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1307525330866469447, guid: b94f01a9a3b88b64b83c8ab9f3571ba0, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874796654900373811, guid: b94f01a9a3b88b64b83c8ab9f3571ba0, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3821239896897653472, guid: b94f01a9a3b88b64b83c8ab9f3571ba0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4665975128164549294, guid: b94f01a9a3b88b64b83c8ab9f3571ba0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -253,6 +265,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4665975128164549294, guid: b94f01a9a3b88b64b83c8ab9f3571ba0, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665975128164549294, guid: b94f01a9a3b88b64b83c8ab9f3571ba0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665975128164549294, guid: b94f01a9a3b88b64b83c8ab9f3571ba0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665975128164549294, guid: b94f01a9a3b88b64b83c8ab9f3571ba0, type: 3}
+      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4665975128164549294, guid: b94f01a9a3b88b64b83c8ab9f3571ba0, type: 3}
@@ -504,6 +528,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 624522285}
   - {fileID: 1702311238}
-  - {fileID: 1555438849}
   - {fileID: 1760930317}
+  - {fileID: 1555438849}
   - {fileID: 1779298550}

@@ -23,12 +23,12 @@ public class GameManager : MonoBehaviour
     public int cardCount = 16;
     [SerializeField] float totalTime = 30.0f;
 
-    bool isplayed = true;
+    bool isplayed = false;
+    public bool IsPlayed { get { return isplayed; } set { isplayed = value; } }
 
     private void Start()
     {
         Time.timeScale = 1.0f;
-        isplayed = true;
     }
 
     private void Update()

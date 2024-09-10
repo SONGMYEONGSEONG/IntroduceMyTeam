@@ -72,4 +72,23 @@ public class Card : MonoBehaviour
         //frontImage = Resources.Load<Texture2D>($"image_{idx}");
         frontSprite.sprite = Resources.Load<Sprite>($"image_{idx}");
     }
+
+    public void MoveCard(Vector2 endPos)
+    {
+        StartCoroutine(MoveCoroutine(endPos));
+    }
+
+    IEnumerator MoveCoroutine(Vector2 endPos)
+    {
+        float eclispedTime = 0.0f;
+
+       while (eclispedTime <= 1.0f)
+       {
+            eclispedTime += Time.deltaTime * 5.0f;
+
+            transform.position = Vector3.Lerp(transform.position, endPos, eclispedTime);
+
+            yield return null;
+        }
+    }
 }
