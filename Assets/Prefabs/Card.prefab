@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2265233540031845905
 Transform:
   m_ObjectHideFlags: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1559891588153498211}
   - component: {fileID: 7673169749841290247}
   - component: {fileID: -6153667127274459864}
-  - component: {fileID: 7036968062558941703}
+  - component: {fileID: -1186956846981117636}
   m_Layer: 0
   m_Name: Card
   m_TagString: Untagged
@@ -157,8 +157,8 @@ MonoBehaviour:
   front: {fileID: 272352320438932903}
   back: {fileID: 5400703924228585035}
   anim: {fileID: 7673169749841290247}
-  frontImage: {fileID: 0}
---- !u!114 &7036968062558941703
+  frontImage: {fileID: 1812985090933855226}
+--- !u!114 &-1186956846981117636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,7 +204,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -6153667127274459864}
         m_TargetAssemblyTypeName: Card, Assembly-CSharp
-        m_MethodName: OpenCard
+        m_MethodName: open
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

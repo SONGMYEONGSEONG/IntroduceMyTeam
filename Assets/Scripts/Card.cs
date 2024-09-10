@@ -11,11 +11,11 @@ public class Card : MonoBehaviour
 
     public Animator anim;
 
-    public Texture2D frontImage;
+    public SpriteRenderer frontImage;
 
     void Start()
     {
-        frontImage = GetComponent<Texture2D>();
+
     }
 
     void Update()
@@ -23,36 +23,33 @@ public class Card : MonoBehaviour
         
     }
 
-    public void InvokeOpenCard()
+    public void OpenCard()
     {
         Invoke("OpenCard", 1.0f);
     }
-    public void OpenCard()
+    public void InvokeOpenCard()
     {
+        if (GameManager.Instance.secondCard != null) return;
+
+        AudioManager.instance.PlaySFX("flip");
         anim.SetBool("isOpen", true);
         front.SetActive(true);
         back.SetActive(false);
-        
-        
-        AudioManager.instance.PlaySFX("flip");
 
-        GameManager.Instance.firstCard = null;
-        GameManager.Instance.secondCard = null;
+        if (GameManager.Instance.firstCard == null)
+        {
+            GameManager.Instance.firstCard = this;
+        }
+        else if (GameManager.Instance.secondCard == null)
+        {
+            GameManager.Instance.secondCard = this;
+            GameManager.Instance.Matched();
+        }
     }
 
-    void DestroyCard()
+    void InvokeDestroyCard()
     {
         Destroy(gameObject);
-    }
-
-    public void InvokeDestroyCard()
-    {
-        Invoke("DestroyCard", 1.0f);
-    }
-
-    public void CloseCard() //카드가 틀리다면 다시 뒤집는 함수
-    {
-        Invoke("CloseCardInvoke", 1.0f);
     }
 
     void CloseCardInvoke()
@@ -62,9 +59,20 @@ public class Card : MonoBehaviour
         back.SetActive(true);
     }
 
+    public void DestroyCard()
+    {
+        Invoke("DestroyCard", 1.0f);
+    }
+
+    public void CloseCard() //카드가 틀리다면 다시 뒤집는 함수
+    {
+        Invoke("CloseCardInvoke", 1.0f);
+    }
+
+
     public void SetImage(int a)
     {
-        idx = a+1;
-        frontImage = Resources.Load<Texture2D>($"image_{idx}");
+        idx = a + 1;
+        frontImage.sprite = Resources.Load<Sprite>($"image_{idx}");
     }
 }
