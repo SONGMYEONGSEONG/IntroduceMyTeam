@@ -1080,21 +1080,23 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0.68867886, b: 0.6886792, a: 0.5}
   m_EffectDistance: {x: 10, y: 10}
   m_UseGraphicAlpha: 1
---- !u!114 &2437415754607558729
-MonoBehaviour:
+--- !u!1 &2462888576047691232
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3548043786128211388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 165a1949283803e458685462a42031cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xAdjustment: -2
-  yAdjustment: -3
-  card: {fileID: 2970235648027208807, guid: a044c72d6a351704fa3aecaed003fc29, type: 3}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5409998323720362759}
+  - component: {fileID: 3657960479790696469}
+  m_Layer: 0
+  m_Name: Board
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!82 &2572615298915773471
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1490,23 +1492,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: StopBGM
---- !u!1 &3548043786128211388
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6342462275286930267}
-  - component: {fileID: 2437415754607558729}
-  m_Layer: 0
-  m_Name: Board
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!222 &3565931331223369172
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1542,6 +1527,21 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0.68867886, b: 0.6886792, a: 0.5}
   m_EffectDistance: {x: 10, y: 10}
   m_UseGraphicAlpha: 1
+--- !u!114 &3657960479790696469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2462888576047691232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 165a1949283803e458685462a42031cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xAdjustment: -2
+  yAdjustment: -3
+  card: {fileID: 2970235648027208807, guid: a044c72d6a351704fa3aecaed003fc29, type: 3}
 --- !u!1 &3774899411201103797
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,6 +2317,21 @@ MonoBehaviour:
   sfx:
   - {fileID: 8300000, guid: 40c36662f5d50a14783cf79516e8eab5, type: 3}
   - {fileID: 8300000, guid: 9c7001da9d493994eadd845b27af2059, type: 3}
+--- !u!4 &5409998323720362759
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2462888576047691232}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!222 &5437193473949645386
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2714,21 +2729,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Name 4
---- !u!4 &6342462275286930267
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3548043786128211388}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6357361909435581378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3919,9 +3919,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 624522285}
-  - {fileID: 6342462275286930267}
   - {fileID: 1702311238}
   - {fileID: 2752244253103563920}
   - {fileID: 3078822143081969014}
   - {fileID: 7776756847336890876}
   - {fileID: 6112642667932796328}
+  - {fileID: 5409998323720362759}

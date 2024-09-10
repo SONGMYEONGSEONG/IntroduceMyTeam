@@ -11,6 +11,7 @@ public class Board : MonoBehaviour
 
     public GameObject card;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +22,10 @@ public class Board : MonoBehaviour
         {
             for (int j = 0; j < 4; j++)
             {
-                Vector2 pos = new Vector2(j * 1.4f + xAdjustment, i * 1.4f + yAdjustment);
-
                 GameObject gameObject = Instantiate(card);
-                gameObject.transform.position = pos;
                 gameObject.GetComponent<Card>().SetImage(arr[i]);
+                Vector2 pos = new Vector2(j * 1.4f + xAdjustment, i * 1.4f + yAdjustment);
+                gameObject.transform.position = pos;
             }
         }
     }
