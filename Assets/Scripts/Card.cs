@@ -11,11 +11,12 @@ public class Card : MonoBehaviour
 
     public Animator anim;
 
-    public Texture2D frontImage;
+    //public Texture2D frontImage;
+    public SpriteRenderer frontSprite;
 
     void Start()
     {
-        frontImage = GetComponent<Texture2D>();
+        //frontImage = GetComponent<Texture2D>();
     }
 
     void Update()
@@ -65,6 +66,7 @@ public class Card : MonoBehaviour
     public void SetImage(int a)
     {
         idx = a+1;
-        frontImage = Resources.Load<Texture2D>($"image_{idx}");
+        //frontImage = Resources.Load<Texture2D>($"image_{idx}");
+        frontSprite.sprite = Resources.Load<Sprite>($"image_{idx}");
     }
 }

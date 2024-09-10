@@ -157,7 +157,7 @@ MonoBehaviour:
   front: {fileID: 272352320438932903}
   back: {fileID: 5400703924228585035}
   anim: {fileID: 7673169749841290247}
-  frontImage: {fileID: 0}
+  frontSprite: {fileID: 1812985090933855226}
 --- !u!114 &7036968062558941703
 MonoBehaviour:
   m_ObjectHideFlags: 0
