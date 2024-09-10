@@ -19,41 +19,44 @@ public class Card : MonoBehaviour
         //frontImage = GetComponent<Texture2D>();
     }
 
-    void Update()
-    {
-        
-    }
 
     public void InvokeOpenCard()
     {
         Invoke("OpenCard", 1.0f);
     }
+
     public void OpenCard()
     {
         anim.SetBool("isOpen", true);
         front.SetActive(true);
         back.SetActive(false);
-        
-        
+       
         AudioManager.instance.PlaySFX("flip");
 
-        GameManager.Instance.firstCard = null;
-        GameManager.Instance.secondCard = null;
+        if (GameManager.Instance.firstCard == null)
+        {
+            GameManager.Instance.firstCard = this;
+        }
+        else if(GameManager.Instance.secondCard == null)
+        {
+            GameManager.Instance.secondCard = this;
+            GameManager.Instance.Matched();
+        }
     }
 
-    void DestroyCard()
+    public void DestroyCard()
     {
         Destroy(gameObject);
     }
 
     public void InvokeDestroyCard()
     {
-        Invoke("DestroyCard", 1.0f);
+        Invoke("DestroyCard", 0.3f);
     }
 
     public void CloseCard() //카드가 틀리다면 다시 뒤집는 함수
     {
-        Invoke("CloseCardInvoke", 1.0f);
+        Invoke("CloseCardInvoke", 0.5f);
     }
 
     void CloseCardInvoke()
