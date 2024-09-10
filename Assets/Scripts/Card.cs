@@ -45,9 +45,10 @@ public class Card : MonoBehaviour
         AudioManager.instance.PlaySFX("flip");
     }
 
-    void InvokeDestroyCard()
+    public void InvokeDestroyCard()
     {
-        Destroy(this);
+        Destroy(gameObject);
+        Destroy(front);
     }
 
     void CloseCardInvoke()
@@ -59,7 +60,7 @@ public class Card : MonoBehaviour
 
     public void DestroyCard()
     {
-        Invoke("DestroyCard", 1.0f);
+        Invoke("InvokeDestroyCard", 1.0f);
     }
 
     public void CloseCard()
@@ -71,7 +72,6 @@ public class Card : MonoBehaviour
     public void SetImage(int a)
     {
         idx = a + 1;
-        RectTransform rect = (RectTransform)frontSprite.transform;
         frontSprite.sprite = Resources.Load<Sprite>($"image_{idx}");
     }
 }
