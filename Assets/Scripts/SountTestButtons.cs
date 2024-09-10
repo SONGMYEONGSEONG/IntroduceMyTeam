@@ -7,7 +7,6 @@ public class SountTestButtons : MonoBehaviour
     public void TestPlayBgm()
     {
         AudioManager.instance.PlayBgm("bgmusic");
-        
     }
 
     public void TestStopBgm()
