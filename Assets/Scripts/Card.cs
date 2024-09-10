@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Linq;
 using UnityEngine;
+using Unity.UI;
+using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
@@ -11,11 +13,12 @@ public class Card : MonoBehaviour
 
     public Animator anim;
 
-    public SpriteRenderer frontImage;
+    public SpriteRenderer frontSprite;
+
 
     void Start()
     {
-
+        
     }
 
     void Update()
@@ -25,6 +28,7 @@ public class Card : MonoBehaviour
 
     public void OpenCard()
     {
+        Debug.Log("¿­¸²");
         Invoke("OpenCard", 1.0f);
     }
     public void InvokeOpenCard()
@@ -73,6 +77,8 @@ public class Card : MonoBehaviour
     public void SetImage(int a)
     {
         idx = a + 1;
-        frontImage.sprite = Resources.Load<Sprite>($"image_{idx}");
+        RectTransform rect = (RectTransform)frontSprite.transform;
+        frontSprite.sprite = Resources.Load<Sprite>($"image_{idx}");
+        rect.sizeDelta = new Vector2(1, 1);
     }
 }
