@@ -25,7 +25,7 @@ public class Board : MonoBehaviour
 
                 GameObject gameObject = Instantiate(card);
                 gameObject.transform.position = pos;
-                //gameObject.GetComponent<Card>().Setting(arr[i]);
+                gameObject.GetComponent<Card>().SetImage(arr[i]);
             }
         }
     }
