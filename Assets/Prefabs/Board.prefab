@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xAdjustment: -2
   yAdjustment: -3
-  card: {fileID: 0}
+  card: {fileID: 2970235648027208807, guid: a044c72d6a351704fa3aecaed003fc29, type: 3}
