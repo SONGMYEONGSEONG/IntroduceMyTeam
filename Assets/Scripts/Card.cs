@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
+    public int idx;
+
     public GameObject front;
     public GameObject back;
 
@@ -13,7 +15,7 @@ public class Card : MonoBehaviour
 
     void Start()
     {
-        
+        frontImage = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -58,5 +60,11 @@ public class Card : MonoBehaviour
         anim.SetBool("isOpen", false);
         front.SetActive(false);
         back.SetActive(true);
+    }
+
+    public void SetImage(int a)
+    {
+        idx = a;
+        frontImage.sprite = Resources.Load<Sprite>($"image_0{idx}");
     }
 }
