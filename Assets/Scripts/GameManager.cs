@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] UI_Timer_print timerPrint;
     [SerializeField] GameObject gameClearPopUp;
     [SerializeField] GameObject gameOverPopUp;
+    [SerializeField] Text clearTimeTxt;
     public int cardCount = 16;
     [SerializeField] float totalTime = 30.0f;
 
@@ -26,7 +27,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.Instance.PlayBgm("bgmusic");
         Time.timeScale = 1.0f;
         isplayed = true;
     }
@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
 
             if (cardCount == 0)
             {
+                clearTimeTxt.text = totalTime.ToString("N2");
                 gameClearPopUp.gameObject.SetActive(true);
                 isplayed = false;
                 Time.timeScale = 0.0f;

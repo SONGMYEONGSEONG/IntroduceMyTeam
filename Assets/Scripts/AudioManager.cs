@@ -44,7 +44,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioClip[] bgm;
     [SerializeField] AudioClip[] sfx;
 
-   public void PlayBgm(string bgmName)
+    private void Start()
+    {
+         PlayBgm("bgmusic");
+    }
+
+    public void PlayBgm(string bgmName)
    {
         for(int i =0; i < bgm.Length; i++)
         {
