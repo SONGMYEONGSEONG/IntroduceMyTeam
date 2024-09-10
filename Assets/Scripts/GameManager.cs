@@ -25,20 +25,20 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void Matched() //카드가 일치하는지 확인 하는 함수
+    public void Matched()
     {
-        if (firstCard.idx == secondCard.idx) //카드가 같다면
+        if (firstCard.idx == secondCard.idx)
         {
             firstCard.DestroyCard();
             secondCard.DestroyCard();
         }
-        else //카드가 틀리다면
+        else
         {
             firstCard.CloseCard();
             secondCard.CloseCard();
         }
 
-        firstCard = null; //오브젝트 값 초기화
+        firstCard = null;
         secondCard = null;
     }
 }

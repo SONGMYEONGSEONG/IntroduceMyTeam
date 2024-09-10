@@ -29,13 +29,6 @@ public class Card : MonoBehaviour
     public void OpenCard()
     {
         Debug.Log("열림");
-        Invoke("OpenCard", 1.0f);
-    }
-    public void InvokeOpenCard()
-    {
-        if (GameManager.Instance.secondCard != null) return;
-
-        AudioManager.instance.PlaySFX("flip");
         anim.SetBool("isOpen", true);
         front.SetActive(true);
         back.SetActive(false);
@@ -49,11 +42,12 @@ public class Card : MonoBehaviour
             GameManager.Instance.secondCard = this;
             GameManager.Instance.Matched();
         }
+        AudioManager.instance.PlaySFX("flip");
     }
 
     void InvokeDestroyCard()
     {
-        Destroy(gameObject);
+        Destroy(this);
     }
 
     void CloseCardInvoke()
@@ -68,7 +62,7 @@ public class Card : MonoBehaviour
         Invoke("DestroyCard", 1.0f);
     }
 
-    public void CloseCard() //카드가 틀리다면 다시 뒤집는 함수
+    public void CloseCard()
     {
         Invoke("CloseCardInvoke", 1.0f);
     }
@@ -79,6 +73,5 @@ public class Card : MonoBehaviour
         idx = a + 1;
         RectTransform rect = (RectTransform)frontSprite.transform;
         frontSprite.sprite = Resources.Load<Sprite>($"image_{idx}");
-        rect.sizeDelta = new Vector2(1, 1);
     }
 }
