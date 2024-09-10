@@ -40,7 +40,7 @@ public class Card : MonoBehaviour
         GameManager.Instance.secondCard = null;
     }
 
-    public void DestroyCard()
+    void DestroyCard()
     {
         Destroy(gameObject);
     }
@@ -55,7 +55,7 @@ public class Card : MonoBehaviour
         Invoke("CloseCardInvoke", 1.0f);
     }
 
-    public void CloseCardInvoke()
+    void CloseCardInvoke()
     {
         anim.SetBool("isOpen", false);
         front.SetActive(false);
