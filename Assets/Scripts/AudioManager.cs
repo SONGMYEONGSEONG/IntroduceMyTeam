@@ -65,6 +65,7 @@ public class AudioManager : MonoBehaviour
     public void StopBgm()
     {
         bgmPlayer.Stop();
+        bgmPlayer.clip = null;
     }
 
     public void PlaySFX(string sfxName)
@@ -78,5 +79,6 @@ public class AudioManager : MonoBehaviour
                 return;
             }
         }
+        sfxPlayer.clip = null;
     }
 }

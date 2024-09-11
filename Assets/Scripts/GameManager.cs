@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = 60;
         Time.timeScale = 1.0f;
     }
 
@@ -51,9 +55,8 @@ public class GameManager : MonoBehaviour
         gameOverPopUp.gameObject.SetActive(true);
         isplayed = false;
         Time.timeScale = 0.0f;
-    }
 
-    
+    }
 
     public void Matched()
     {
@@ -86,4 +89,5 @@ public class GameManager : MonoBehaviour
         firstCard = null;
         secondCard = null;
     }
+    
 }

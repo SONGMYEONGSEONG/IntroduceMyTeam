@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/TitleScene.unity
+    guid: 1e4ddf62fe3b76940864bd12fef9a673
+  - enabled: 1
+    path: Assets/Scenes/StageSelectScene.unity
+    guid: 9da3de985f373f849b956ff18a329cb3
+  - enabled: 1
+    path: Assets/Scenes/HiddenStageTitle.unity
+    guid: 0da9d6bd4cf47e5408dc6d42e074ca1d
+  - enabled: 1
+    path: Assets/Scenes/HiddenStage.unity
+    guid: b70defd438962fc41b1125b90331af9a
   m_configObjects: {}
