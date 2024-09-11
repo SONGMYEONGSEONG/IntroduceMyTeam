@@ -6,10 +6,7 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
-    int width = 4;
     [Header("Board SIze")]
-    [SerializeField] int height= 4;
-
     [SerializeField] float xAdjustment  = -2.0f;
     [SerializeField] float yAdjustment  = -3.0f;
     [SerializeField] float xGap         = 1.4f;
@@ -24,6 +21,11 @@ public class Board : MonoBehaviour
     [SerializeField] GameObject cardPrefeb;
 
     List<GameObject> cards;
+    int allCardNum;
+
+    public List<GameObject> Cards { get { return cards; } }
+    public int AllCardNum { get { return allCardNum; } }
+
     Vector2[] arrPos;
 
     // Start is called before the first frame update
@@ -31,7 +33,7 @@ public class Board : MonoBehaviour
     {
         Stage curStageData = DataManager.Instance.GetCurStgae();
 
-        int allCardNum = curStageData.boardWidth * curStageData.boardHeight;
+        allCardNum = curStageData.boardWidth * curStageData.boardHeight;
         GameManager.Instance.CardCount = allCardNum;
 
         arrPos = new Vector2[allCardNum];
@@ -39,6 +41,7 @@ public class Board : MonoBehaviour
 
         int[] arr = new int[allCardNum];
         int halfCardNum = (int)(allCardNum * 0.5f);
+
         int index = 0;
         for (int i = 0; i < allCardNum; i += 2, index++)
         {
@@ -64,7 +67,7 @@ public class Board : MonoBehaviour
                 gameObject.GetComponent<Card>().SetImage(temp);
 
                 Vector2 pos = new Vector2(j * xGap + xAdjustment, i * yGap + yAdjustment);
-                arrPos[(width * i) + j] = pos;
+                arrPos[(curStageData.boardWidth * i) + j] = pos;
 
                 cards.Add(gameObject);
             }
