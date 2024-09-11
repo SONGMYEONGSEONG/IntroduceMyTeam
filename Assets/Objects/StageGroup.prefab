@@ -52,6 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnLockStageBtn: {fileID: 8240290481671996830}
   LockStageBtn: {fileID: 3027247570768268625}
+  stageNum: 3
 --- !u!1 &944698499637321869
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnLockStageBtn: {fileID: 8647422631114110142}
   LockStageBtn: {fileID: 1429360215321630553}
+  stageNum: 2
 --- !u!1 &1429360215321630553
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +265,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6924484684425284836}
         m_TargetAssemblyTypeName: UI_StageBtn, Assembly-CSharp
-        m_MethodName: TestCode
+        m_MethodName: StageStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -671,7 +673,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: stage 1
+  m_Text: stage 3
 --- !u!114 &3428746351780795769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -834,6 +836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnLockStageBtn: {fileID: 7142917153090858904}
   LockStageBtn: {fileID: 1590110046665838127}
+  stageNum: 1
 --- !u!1 &5583164478421027690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,7 +1055,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5127225014497455496}
         m_TargetAssemblyTypeName: UI_StageBtn, Assembly-CSharp
-        m_MethodName: TestCode
+        m_MethodName: StageStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1348,7 +1351,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: stage 1
+  m_Text: stage 2
 --- !u!114 &6480413157869456923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1523,7 +1526,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9051333266318109606}
         m_TargetAssemblyTypeName: UI_StageBtn, Assembly-CSharp
-        m_MethodName: TestCode
+        m_MethodName: StageStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

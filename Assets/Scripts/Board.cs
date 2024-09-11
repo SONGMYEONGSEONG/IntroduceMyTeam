@@ -30,27 +30,30 @@ public class Board : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.Instance.CardCount = height * width;
+        Stage curStageData = DataManager.Instance.GetCurStgae();
 
-        arrPos = new Vector2[height * width];
+        int allCardNum = curStageData.boardWidth * curStageData.boardHeight;
+        GameManager.Instance.CardCount = allCardNum;
+
+        arrPos = new Vector2[allCardNum];
         cards = new List<GameObject>();
 
-        int[] arr = new int[height * width];
-        int CardHalf = (int)(height * width *0.5f);
+        int[] arr = new int[allCardNum];
+        int halfCardNum = (int)(allCardNum * 0.5f);
         int index = 0;
-        for (int i = 0; i < height * width; i += 2, index++)
+        for (int i = 0; i < allCardNum; i += 2, index++)
         {
             arr[i] = index;
             arr[i+1] = index;
         }
 
-        float RandomMax = CardHalf - 1;
+        float randomMax = halfCardNum - 1;
 
-        arr = arr.OrderBy(x => Random.Range(0f, RandomMax)).ToArray();
+        arr = arr.OrderBy(x => Random.Range(0f, randomMax)).ToArray();
    
-        for (int i = 0; i < height; i++)
+        for (int i = 0; i < curStageData.boardHeight ; i++)
         {
-            for (int j = 0; j < width; j++)
+            for (int j = 0; j < curStageData.boardWidth ; j++)
             {
                 GameObject gameObject = Instantiate(cardPrefeb, new Vector2(0,-5),Quaternion.identity);
 

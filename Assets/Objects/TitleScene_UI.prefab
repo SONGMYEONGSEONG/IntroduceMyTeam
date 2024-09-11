@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 1929622058143488315}
   - component: {fileID: 7221048046232519288}
   - component: {fileID: 6086912772475251231}
-  - component: {fileID: 8668196707389159305}
+  - component: {fileID: 6153678721167163811}
   m_Layer: 5
   m_Name: StartBtn
   m_TagString: Untagged
@@ -305,9 +305,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8668196707389159305}
-        m_TargetAssemblyTypeName: UI_Button_Start, Assembly-CSharp
-        m_MethodName: GameStart
+      - m_Target: {fileID: 6153678721167163811}
+        m_TargetAssemblyTypeName: UI_Button_StageSelect, Assembly-CSharp
+        m_MethodName: StageSelectSceneLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -317,7 +317,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8668196707389159305
+--- !u!114 &6153678721167163811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3821239896897653472}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08bc151f95ec7db4383f150246d6442b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e98a41129bd79842a0292a892e1878e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5174924857788433212

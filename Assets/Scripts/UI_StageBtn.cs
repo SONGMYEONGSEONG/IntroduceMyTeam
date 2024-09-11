@@ -5,11 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class UI_StageBtn : MonoBehaviour
 {
-    public delegate void OnStageBtnClicked();
-    public static event OnStageBtnClicked OnStageBtnClickedHandler;
-
     [SerializeField] GameObject UnLockStageBtn;
     [SerializeField] GameObject LockStageBtn;
+    [SerializeField] int stageNum;
 
     public void UnLock()
     {
@@ -17,14 +15,9 @@ public class UI_StageBtn : MonoBehaviour
         LockStageBtn.SetActive(false);
     }
 
-    //Test
-    public void TestCode()
-    {
-        OnStageBtnClickedHandler.Invoke();
-    }
-
     public void StageStart()
     {
+        DataManager.Instance.CurStage = stageNum;
         SceneManager.LoadScene("MainScene");
     }
 }

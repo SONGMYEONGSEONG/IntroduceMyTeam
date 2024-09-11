@@ -6,20 +6,20 @@ public class StageManager : MonoBehaviour
 {
     [SerializeField] List<UI_StageBtn> StageBtns;
 
-    int CurUnLockStage = 1;
-
     public void Start()
     {
-        StageBtns[CurUnLockStage -1].UnLock();
-        UI_StageBtn.OnStageBtnClickedHandler += UnLockStage;
-    }
+        List<Stage> stageList = DataManager.Instance.Stages;
 
-    public void UnLockStage()
-    {
-        if (StageBtns.Count <= CurUnLockStage) return;
+        StageBtns[0].UnLock(); // 1스테이지는 무조건 언락 되었어야하기때문에 
 
-        CurUnLockStage++;
-        StageBtns[CurUnLockStage - 1].UnLock();
+        for (int i =1; i < StageBtns.Count; i++) 
+        {
+            if(stageList[i-1].isClear)
+            {
+                StageBtns[i].UnLock();
+            }
+        }
+
     }
 
 }

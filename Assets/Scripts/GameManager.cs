@@ -71,11 +71,11 @@ public class GameManager : MonoBehaviour
 
             if (cardCount == 0)
             {
+                DataManager.Instance.SetCurStgaeIsClear();
                 clearTimeTxt.text = totalTime.ToString("N2");
-                gameClearPopUp.gameObject.SetActive(true);
+                gameClearPopUp.gameObject.SetActive(true);            
                 isplayed = false;
                 Time.timeScale = 0.0f;
-
             }
         }
 
