@@ -20,7 +20,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject gameClearPopUp;
     [SerializeField] GameObject gameOverPopUp;
     [SerializeField] Text clearTimeTxt;
-    
+
+    //Boss전 변수
+    bool isBoss = false;
+    bool isBossTurn = false; 
+    [SerializeField] Boss boss;
+
     [SerializeField] float totalTime = 30.0f;
 
     int cardCount;
@@ -29,14 +34,25 @@ public class GameManager : MonoBehaviour
     bool isplayed = false;
     public bool IsPlayed { get { return isplayed; } set { isplayed = value; } }
 
+
     private void Start()
     {
         Time.timeScale = 1.0f;
+
+        if (DataManager.Instance.GetCurStgae().isBoss)
+        {
+            isBoss = true;
+            isBossTurn = true;
+            timerPrint.gameObject.SetActive(false);
+            clearTimeTxt.gameObject.SetActive(false);
+            boss.gameObject.SetActive(true);
+        }
     }
 
     private void Update()
     {
-        if (isplayed)
+        //일반게임
+        if (isplayed && !isBoss)
         {
             if (totalTime <= 0)
             {
@@ -45,6 +61,21 @@ public class GameManager : MonoBehaviour
 
             totalTime -= Time.deltaTime;
             timerPrint.PrintTimer(totalTime);
+        }
+
+        //보스전
+        if(isplayed && isBoss)
+        {
+            switch(isBossTurn)
+            {
+                case true: //Boss Turn 진행
+                    boss.BossPlay();
+                    break;
+
+                case false: //플레이어 턴 
+
+                    break; 
+            }
         }
     }
 
@@ -55,8 +86,6 @@ public class GameManager : MonoBehaviour
         isplayed = false;
         Time.timeScale = 0.0f;
     }
-
-    
 
     public void Matched()
     {
@@ -69,6 +98,7 @@ public class GameManager : MonoBehaviour
             secondCard.InvokeDestroyCard();
             cardCount -= 2;
 
+   
             if (cardCount == 0)
             {
                 DataManager.Instance.SetCurStgaeIsClear();

@@ -45,15 +45,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stages:
-  - stageNum: 1
+  - isBoss: 0
+    stageNum: 1
     boardWidth: 4
     boardHeight: 3
     isClear: 0
-  - stageNum: 2
+  - isBoss: 0
+    stageNum: 2
     boardWidth: 4
     boardHeight: 4
     isClear: 0
-  - stageNum: 3
+  - isBoss: 0
+    stageNum: 3
     boardWidth: 4
     boardHeight: 5
+    isClear: 0
+  - isBoss: 1
+    stageNum: 4
+    boardWidth: 4
+    boardHeight: 4
     isClear: 0

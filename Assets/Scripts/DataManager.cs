@@ -8,6 +8,7 @@ using UnityEngine;
 [System.Serializable]
 public struct Stage
 {
+    public bool isBoss;
     public int stageNum;
     public int boardWidth;
     public int boardHeight;
@@ -68,4 +69,5 @@ public class DataManager : MonoBehaviour
         stage.isClear = true;
         stages[curStage] = stage;
     }
+
 }

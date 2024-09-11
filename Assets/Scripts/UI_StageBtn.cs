@@ -20,4 +20,10 @@ public class UI_StageBtn : MonoBehaviour
         DataManager.Instance.CurStage = stageNum;
         SceneManager.LoadScene("MainScene");
     }
+
+    public void BossStageStart()
+    {
+        DataManager.Instance.CurStage = stageNum;
+        SceneManager.LoadScene("BossScene");
+    }
 }

@@ -87,7 +87,6 @@ public class Card : MonoBehaviour
             eclispedTime += Time.deltaTime * 5.0f;
 
             transform.position = Vector3.Lerp(transform.position, endPos, eclispedTime);
-
             yield return null;
         }
     }
