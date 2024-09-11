@@ -20,8 +20,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject gameClearPopUp;
     [SerializeField] GameObject gameOverPopUp;
     [SerializeField] Text clearTimeTxt;
-    public int cardCount = 16;
+    
     [SerializeField] float totalTime = 30.0f;
+
+    int cardCount;
+    public int CardCount { set {cardCount =  value; } }
 
     bool isplayed = false;
     public bool IsPlayed { get { return isplayed; } set { isplayed = value; } }
