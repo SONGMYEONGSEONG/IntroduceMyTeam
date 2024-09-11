@@ -27,17 +27,39 @@ public class Card : MonoBehaviour
 
     public void OpenCard()
     {
+        if (!GameManager.Instance.IsBossTurn) //보스 턴에는 동작하지 않게 막는 조건문
+        {
+            anim.SetBool("isOpen", true);
+            front.SetActive(true);
+            back.SetActive(false);
+
+            AudioManager.instance.PlaySFX("flip");
+
+            if (GameManager.Instance.firstCard == null)
+            {
+                GameManager.Instance.firstCard = this;
+            }
+            else if (GameManager.Instance.secondCard == null)
+            {
+                GameManager.Instance.secondCard = this;
+                GameManager.Instance.Matched();
+            }
+        }
+    }
+
+    public void BossOpenCard()
+    {
         anim.SetBool("isOpen", true);
         front.SetActive(true);
         back.SetActive(false);
-       
+
         AudioManager.instance.PlaySFX("flip");
 
         if (GameManager.Instance.firstCard == null)
         {
             GameManager.Instance.firstCard = this;
         }
-        else if(GameManager.Instance.secondCard == null)
+        else if (GameManager.Instance.secondCard == null)
         {
             GameManager.Instance.secondCard = this;
             GameManager.Instance.Matched();

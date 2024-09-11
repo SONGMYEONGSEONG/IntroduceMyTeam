@@ -25,6 +25,11 @@ public class GameManager : MonoBehaviour
     bool isBoss = false;
     bool isBossTurn = false; 
     [SerializeField] Boss boss;
+    public bool IsBossTurn { get { return isBossTurn; } }
+    int bossScore = 0;
+    int playerScore = 0;
+    [SerializeField] Text bossScoreTxt;
+    [SerializeField] Text playerScoreTxt;
 
     [SerializeField] float totalTime = 30.0f;
 
@@ -46,6 +51,8 @@ public class GameManager : MonoBehaviour
             timerPrint.gameObject.SetActive(false);
             clearTimeTxt.gameObject.SetActive(false);
             boss.gameObject.SetActive(true);
+            bossScoreTxt.gameObject.SetActive(true);
+            playerScoreTxt.gameObject.SetActive(true);
         }
     }
 
@@ -69,7 +76,10 @@ public class GameManager : MonoBehaviour
             switch(isBossTurn)
             {
                 case true: //Boss Turn 진행
-                    boss.BossPlay();
+                    if (firstCard == null && secondCard == null)
+                    {
+                        boss.BossPlay();
+                    }
                     break;
 
                 case false: //플레이어 턴 
@@ -98,7 +108,22 @@ public class GameManager : MonoBehaviour
             secondCard.InvokeDestroyCard();
             cardCount -= 2;
 
-   
+            if (isBoss)
+            {
+                switch(isBossTurn)
+                {
+                    case true:
+                        bossScore++;
+                        bossScoreTxt.text = bossScore.ToString();
+                        break;
+
+                    case false:
+                        playerScore++;
+                        playerScoreTxt.text = playerScore.ToString();
+                        break;
+                }
+            }
+            
             if (cardCount == 0)
             {
                 DataManager.Instance.SetCurStgaeIsClear();
@@ -112,11 +137,18 @@ public class GameManager : MonoBehaviour
         else
         {
             firstCard.CloseCard();
-            secondCard.CloseCard();
+            secondCard.CloseCard();  
         }
 
         //기존 데이터 초기화
         firstCard = null;
         secondCard = null;
+
+        if (isBoss)
+        {
+            isBossTurn = !isBossTurn; //턴 교체
+        }
     }
+
+
 }

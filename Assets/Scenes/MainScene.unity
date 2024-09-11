@@ -307,25 +307,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainScene_UI
       objectReference: {fileID: 0}
-    - target: {fileID: 6645551937613184717, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6645551937613184717, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
-      propertyPath: m_ScreenMatchMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6645551937613184717, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
-      propertyPath: m_MatchWidthOrHeight
+    - target: {fileID: 5301574750779340909, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6645551937613184717, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 760
-      objectReference: {fileID: 0}
-    - target: {fileID: 6645551937613184717, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1280
+    - target: {fileID: 9040386644873877803, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -351,6 +339,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e65e45740e41db64aaa90df412d78b58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &871608896 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2401912602993865468, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
+  m_PrefabInstance: {fileID: 871608892}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &871608897 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6197622688479569976, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
+  m_PrefabInstance: {fileID: 871608892}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1068831263 stripped
@@ -421,21 +431,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2081936935}
     - target: {fileID: 3829489518424638328, guid: dcc83cf84945c0344aac7adb2f4246b9, type: 3}
-      propertyPath: cardCount
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 3829489518424638328, guid: dcc83cf84945c0344aac7adb2f4246b9, type: 3}
-      propertyPath: totalTime
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3829489518424638328, guid: dcc83cf84945c0344aac7adb2f4246b9, type: 3}
-      propertyPath: bossObject
-      value: 
-      objectReference: {fileID: 2081936935}
-    - target: {fileID: 3829489518424638328, guid: dcc83cf84945c0344aac7adb2f4246b9, type: 3}
       propertyPath: timerPrint
       value: 
       objectReference: {fileID: 871608895}
+    - target: {fileID: 3829489518424638328, guid: dcc83cf84945c0344aac7adb2f4246b9, type: 3}
+      propertyPath: bossScoreTxt
+      value: 
+      objectReference: {fileID: 871608897}
     - target: {fileID: 3829489518424638328, guid: dcc83cf84945c0344aac7adb2f4246b9, type: 3}
       propertyPath: clearTimeTxt
       value: 
@@ -448,6 +450,10 @@ PrefabInstance:
       propertyPath: gameClearPopUp
       value: 
       objectReference: {fileID: 871608894}
+    - target: {fileID: 3829489518424638328, guid: dcc83cf84945c0344aac7adb2f4246b9, type: 3}
+      propertyPath: playerScoreTxt
+      value: 
+      objectReference: {fileID: 871608896}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -475,6 +481,22 @@ PrefabInstance:
     - target: {fileID: 7540318364157766764, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
       propertyPath: m_Name
       value: DataManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
+      propertyPath: stages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
+      propertyPath: stages.Array.data[2].isBoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
+      propertyPath: stages.Array.data[0].boardHeight
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
+      propertyPath: stages.Array.data[2].boardHeight
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8293445945688849400, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
       propertyPath: m_LocalPosition.x

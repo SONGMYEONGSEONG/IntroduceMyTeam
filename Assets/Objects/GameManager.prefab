@@ -46,3 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstCard: {fileID: 0}
   secondCard: {fileID: 0}
+  timerPrint: {fileID: 0}
+  gameClearPopUp: {fileID: 0}
+  gameOverPopUp: {fileID: 0}
+  clearTimeTxt: {fileID: 0}
+  boss: {fileID: 0}
+  bossScoreTxt: {fileID: 0}
+  playerScoreTxt: {fileID: 0}
+  totalTime: 30
