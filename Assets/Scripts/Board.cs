@@ -7,11 +7,13 @@ using static UnityEditor.PlayerSettings;
 
 public class Board : MonoBehaviour
 {
-    [SerializeField] int col = 4;
-    [SerializeField] int row = 4;
+    int width = 4;
+    [SerializeField] int height= 4;
 
     [SerializeField] float xAdjustment = -2.0f;
     [SerializeField] float yAdjustment = -3.0f;
+    [SerializeField] float xGap = 1.4f;
+    [SerializeField] float yGap = 1.4f;
 
     [SerializeField] GameObject card;
     Vector2[] arrPos;
@@ -21,40 +23,36 @@ public class Board : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /// 스테이지 선택을 위한 카드 자동화 진행중 
-        cards = new List<GameObject> ();
-        arrPos = new Vector2[ col * row ];
+        arrPos = new Vector2[height * width];
+        cards = new List<GameObject>();
 
-        if (col * row % 2 != 0)
+        int[] arr = new int[height * width];
+        int CardHalf = (int)(height * width *0.5f);
+        for (int i = 0; i < CardHalf; i += 2)
         {
-            Debug.Log("행과 열이 짝수가 아닙니다. 게임이 성립되지 않습니다.");
-            return;
+            arr[i] = i;
+            arr[i+1] = i;
         }
 
-        List<int> list_Index = new List<int> ();
-        for(int i = 0; i < col * row *0.5f; i++)
-        {
-            list_Index.Add(i);
-            list_Index.Add(i);
-        }
-        ///
+        float RandomMax = CardHalf - 1;
 
-        int[] arr = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7 };
-        arr = arr.OrderBy(x => Random.Range(0f, 7f)).ToArray();
+        arr = arr.OrderBy(x => Random.Range(0f, RandomMax)).ToArray();
    
-        for (int i = 0; i < col; i++)
+        for (int i = 0; i < height; i++)
         {
-            for (int j = 0; j < row; j++)
+            for (int j = 0; j < width; j++)
             {
                 GameObject gameObject = Instantiate(card,new Vector2(0,-5),Quaternion.identity);
 
+                //섞은 배열 에서 제일 앞에 있는 원소 value값을 가져오고
+                //Skip을 이용해서 제일 앞에 있는 원소를 삭제 후 arr에 다시 저장하는 함수
                 int temp = arr[0];
                 arr = arr.Skip(1).ToArray();
 
                 gameObject.GetComponent<Card>().SetImage(temp);
 
-                Vector2 pos = new Vector2(j * 1.4f + xAdjustment, i * 1.4f + yAdjustment);
-                arrPos[(4 * i) + j] = pos;
+                Vector2 pos = new Vector2(j * xGap + xAdjustment, i * yGap + yAdjustment);
+                arrPos[(width * i) + j] = pos;
 
                 cards.Add(gameObject);
             }

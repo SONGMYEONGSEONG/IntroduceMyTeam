@@ -25,9 +25,14 @@ public class UI_Start_Timer : MonoBehaviour
 
             if (index >= texts.Count)
             {
-                GameManager.Instance.IsPlayed = true;
-                Destroy(gameObject);
+                Invoke("Finished", 1.0f);
             }
         }  
+    }
+
+    private void Finished()
+    {
+        GameManager.Instance.IsPlayed = true;
+        Destroy(gameObject);
     }
 }
