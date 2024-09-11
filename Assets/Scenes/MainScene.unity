@@ -307,6 +307,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainScene_UI
       objectReference: {fileID: 0}
+    - target: {fileID: 6645551937613184717, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645551937613184717, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645551937613184717, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645551937613184717, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 760
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645551937613184717, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1280
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
