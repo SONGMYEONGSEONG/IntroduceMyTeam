@@ -14,7 +14,8 @@ public class Boss : MonoBehaviour
     bool isBossPlay = false;
     int seenIndex = -1;// 첫번째 뽑은 카드의 중복 인덱스 체크용 
     List<GameObject> bossCards;
-    
+    bool cardSelectSequence = false;
+
     private void Start()
     {
         bossCards = board.Cards;
@@ -28,7 +29,6 @@ public class Boss : MonoBehaviour
         }   
     }
 
-    bool cardSelectSequence = false;
     public void CardSelect(int Index)
     {
         do

@@ -27,7 +27,7 @@ public class Card : MonoBehaviour
 
     public void OpenCard()
     {
-        if (!GameManager.Instance.IsBossTurn) //보스 턴에는 동작하지 않게 막는 조건문
+        if (!GameManager.Instance.IsBossTurn && GameManager.Instance.IsPlayed) //보스 턴에는 동작하지 않게 막는 조건문
         {
             anim.SetBool("isOpen", true);
             front.SetActive(true);

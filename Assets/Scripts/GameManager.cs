@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] UI_Timer_print timerPrint;
     [SerializeField] GameObject gameClearPopUp;
     [SerializeField] GameObject gameOverPopUp;
+    [SerializeField] Text ClearTimeLabelTxt;
     [SerializeField] Text clearTimeTxt;
 
     //Boss전 변수
@@ -26,10 +27,13 @@ public class GameManager : MonoBehaviour
     bool isBossTurn = false; 
     [SerializeField] Boss boss;
     public bool IsBossTurn { get { return isBossTurn; } }
-    int bossScore = 0;
+    public int bossScore = 0;
     int playerScore = 0;
+    [SerializeField] float bossBattleTime = 5.0f;
     [SerializeField] Text bossScoreTxt;
     [SerializeField] Text playerScoreTxt;
+    [SerializeField] UI_BossBattleTimer bossBattleTimer;
+    //
 
     [SerializeField] float totalTime = 30.0f;
 
@@ -43,6 +47,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1.0f;
+        totalTime = 30.0f;
 
         if (DataManager.Instance.GetCurStgae().isBoss)
         {
@@ -53,6 +58,8 @@ public class GameManager : MonoBehaviour
             boss.gameObject.SetActive(true);
             bossScoreTxt.gameObject.SetActive(true);
             playerScoreTxt.gameObject.SetActive(true);
+            bossBattleTimer.gameObject.SetActive(true);
+            totalTime = bossBattleTime;
         }
     }
 
@@ -73,9 +80,11 @@ public class GameManager : MonoBehaviour
         //보스전
         if(isplayed && isBoss)
         {
-            switch(isBossTurn)
+            switch (isBossTurn)
             {
                 case true: //Boss Turn 진행
+                    bossBattleTimer.gameObject.SetActive(false);
+
                     if (firstCard == null && secondCard == null)
                     {
                         boss.BossPlay();
@@ -83,18 +92,58 @@ public class GameManager : MonoBehaviour
                     break;
 
                 case false: //플레이어 턴 
+                    bossBattleTimer.gameObject.SetActive(true);
 
+                    totalTime -= Time.deltaTime;
+                    bossBattleTimer.PrintTimerBar(totalTime, bossBattleTime);
+
+                    if (totalTime <= 0)
+                    {
+                        CardReset();
+                        isBossTurn = !isBossTurn; //턴 교체
+                        totalTime = bossBattleTime;
+                    }
                     break; 
             }
         }
     }
 
+    private void OffUI()
+    {
+        timerPrint.gameObject.SetActive(false);
+        bossScoreTxt.gameObject.SetActive(false);
+        playerScoreTxt.gameObject.SetActive(false);
+        bossBattleTimer.gameObject.SetActive(false);
+
+        if(isBoss)
+        {
+            ClearTimeLabelTxt.gameObject.SetActive(false);
+            clearTimeTxt.gameObject.SetActive(false);
+        }
+    }
+
+    private void CardReset()
+    {
+        if (firstCard != null)
+        {
+            firstCard.CloseCard();
+            firstCard = null;
+        }
+
+        if(secondCard != null)
+        {
+            secondCard.CloseCard();
+            secondCard = null;
+        }
+    }
+
     private void GameOver()
     {
+        OffUI();
+        isplayed = false;
         timerPrint.PrintTimer(0.0f);
         gameOverPopUp.gameObject.SetActive(true);
-        isplayed = false;
-        Time.timeScale = 0.0f;
+        Invoke("TimeStop", 1.0f);
     }
 
     public void Matched()
@@ -126,14 +175,32 @@ public class GameManager : MonoBehaviour
             
             if (cardCount == 0)
             {
-                DataManager.Instance.SetCurStgaeIsClear();
-                clearTimeTxt.text = totalTime.ToString("N2");
-                gameClearPopUp.gameObject.SetActive(true);            
+                OffUI();
                 isplayed = false;
-                Time.timeScale = 0.0f;
+                switch (isBoss)
+                {
+                    case true:
+
+                        if(playerScore > bossScore)
+                        {
+                            gameClearPopUp.gameObject.SetActive(true);
+                            DataManager.Instance.SetCurStgaeIsClear();
+                        }
+                        else
+                        {
+                            gameOverPopUp.gameObject.SetActive(true);
+                        }
+                        break;
+
+                    case false:
+                        DataManager.Instance.SetCurStgaeIsClear();
+                        clearTimeTxt.text = totalTime.ToString("N2");
+                        gameClearPopUp.gameObject.SetActive(true);
+                        break;
+                }
+                Invoke("TimeStop", 1.0f);
             }
         }
-
         else
         {
             firstCard.CloseCard();
@@ -147,8 +214,15 @@ public class GameManager : MonoBehaviour
         if (isBoss)
         {
             isBossTurn = !isBossTurn; //턴 교체
+            totalTime = bossBattleTime;
         }
+
+        
     }
 
+    private void TimeStop()
+    {
+        Time.timeScale = 0.0f;
+    }
 
 }
