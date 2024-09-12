@@ -11,12 +11,10 @@ public class Card : MonoBehaviour
 
     public Animator anim;
 
-    //public Texture2D frontImage;
     public SpriteRenderer frontSprite;
 
     void Start()
     {
-        //frontImage = GetComponent<Texture2D>();
     }
 
 
