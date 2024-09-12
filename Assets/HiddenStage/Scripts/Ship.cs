@@ -52,11 +52,14 @@ public class Ship : MonoBehaviour
 
     IEnumerator MakeBullet()
     {
-        AudioManager.Instance.PlaySFX("shoot");
-        float x = transform.position.x;
-        float y = transform.position.y;
-        Instantiate(BulletPrefab, new Vector2(x, y), Quaternion.identity);
-        yield return new WaitForSeconds(0.2f);
+        while(true)
+        {
+            AudioManager.Instance.PlaySFX("shoot");
+            float x = transform.position.x;
+            float y = transform.position.y;
+            Instantiate(BulletPrefab, new Vector2(x, y), Quaternion.identity);
+            yield return new WaitForSeconds(0.2f);
+        }
     }
 
     public void GameOver()
