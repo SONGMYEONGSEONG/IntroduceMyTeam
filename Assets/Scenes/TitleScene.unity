@@ -144,11 +144,27 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
+      propertyPath: stages.Array.data[1].isBoss
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
       propertyPath: stages.Array.data[2].isBoss
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
       propertyPath: stages.Array.data[3].isBoss
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
+      propertyPath: stages.Array.data[0].isClear
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
+      propertyPath: stages.Array.data[1].isClear
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
+      propertyPath: stages.Array.data[2].isClear
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
@@ -496,6 +512,10 @@ PrefabInstance:
     - target: {fileID: 523625353498960301, guid: 72dee75e561b4fc4eb49e3b0dc1e67ff, type: 3}
       propertyPath: m_Name
       value: TitleScene_BG
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195326568619129390, guid: 72dee75e561b4fc4eb49e3b0dc1e67ff, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 9195326568619129390, guid: 72dee75e561b4fc4eb49e3b0dc1e67ff, type: 3}
       propertyPath: m_LocalPosition.x
