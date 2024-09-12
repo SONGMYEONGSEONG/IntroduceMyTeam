@@ -550,6 +550,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3402819708488737401, guid: 70d1e76aacd0d4e4184cb2e4578b4256, type: 3}
+      propertyPath: bgm.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402819708488737401, guid: 70d1e76aacd0d4e4184cb2e4578b4256, type: 3}
+      propertyPath: bgm.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 28d270d2407f145449a7e87d2d3d76c2, type: 3}
+    - target: {fileID: 3402819708488737401, guid: 70d1e76aacd0d4e4184cb2e4578b4256, type: 3}
+      propertyPath: bgm.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: f6655a21a5373814e86ee5213de8c94f, type: 3}
+    - target: {fileID: 3402819708488737401, guid: 70d1e76aacd0d4e4184cb2e4578b4256, type: 3}
+      propertyPath: bgm.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: ef54565996a2d8e4ca15d02579bf14a4, type: 3}
+    - target: {fileID: 3402819708488737401, guid: 70d1e76aacd0d4e4184cb2e4578b4256, type: 3}
+      propertyPath: bgm.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0d36fdcfb5980b04588734f670687a42, type: 3}
     - target: {fileID: 4799699029205257075, guid: 70d1e76aacd0d4e4184cb2e4578b4256, type: 3}
       propertyPath: m_Name
       value: AudioManager

@@ -65,6 +65,9 @@ public class DataManager : MonoBehaviour
 
     public void SetCurStgaeIsClear()
     {
+        //되지않음
+        //stages[curStage].isClear = false;
+
         Stage stage = stages[curStage];
         stage.isClear = true;
         stages[curStage] = stage;
