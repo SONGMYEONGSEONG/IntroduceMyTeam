@@ -134,6 +134,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &472318131 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4475339251511214473, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
+  m_PrefabInstance: {fileID: 871608892}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,6 +245,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3198451204711251493, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3958869734713622693, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -317,6 +332,30 @@ PrefabInstance:
     - target: {fileID: 4178053364327623607, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
       propertyPath: m_Name
       value: MainScene_UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5230679669590319446, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -263
+      objectReference: {fileID: 0}
+    - target: {fileID: 5230679669590319446, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 370
+      objectReference: {fileID: 0}
+    - target: {fileID: 5301574750779340909, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860269777184572977, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890918948917259682, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 277
+      objectReference: {fileID: 0}
+    - target: {fileID: 9040386644873877803, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -449,6 +488,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1572801696}
     - target: {fileID: 3829489518424638328, guid: dcc83cf84945c0344aac7adb2f4246b9, type: 3}
+      propertyPath: bossTurn
+      value: 
+      objectReference: {fileID: 472318131}
+    - target: {fileID: 3829489518424638328, guid: dcc83cf84945c0344aac7adb2f4246b9, type: 3}
       propertyPath: timerPrint
       value: 
       objectReference: {fileID: 871608895}
@@ -468,6 +511,10 @@ PrefabInstance:
       propertyPath: gameOverPopUp
       value: 
       objectReference: {fileID: 871608893}
+    - target: {fileID: 3829489518424638328, guid: dcc83cf84945c0344aac7adb2f4246b9, type: 3}
+      propertyPath: PlayerTurnTime
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3829489518424638328, guid: dcc83cf84945c0344aac7adb2f4246b9, type: 3}
       propertyPath: bossBattleTime
       value: 3

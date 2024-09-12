@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
-    public int idx;
+    public int idx;//value 값
 
     public GameObject front;
     public GameObject back;

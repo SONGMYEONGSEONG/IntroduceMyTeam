@@ -7,8 +7,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    
-
     private void Awake()
     {
         if(Instance == null)
@@ -32,10 +30,11 @@ public class GameManager : MonoBehaviour
     public bool IsBossTurn { get { return isBossTurn; } }
     public int bossScore = 0;
     int playerScore = 0;
-    [SerializeField] float bossBattleTime = 5.0f;
+    [SerializeField] float PlayerTurnTime = 5.0f;
     [SerializeField] Text bossScoreTxt;
     [SerializeField] Text playerScoreTxt;
     [SerializeField] UI_BossBattleTimer bossBattleTimer;
+    [SerializeField] Text bossTurn;
     //
 
     [SerializeField] float totalTime = 30.0f;
@@ -61,8 +60,7 @@ public class GameManager : MonoBehaviour
             boss.gameObject.SetActive(true);
             bossScoreTxt.gameObject.SetActive(true);
             playerScoreTxt.gameObject.SetActive(true);
-            bossBattleTimer.gameObject.SetActive(true);
-            totalTime = bossBattleTime;
+            totalTime = PlayerTurnTime;
         }
     }
 
@@ -86,6 +84,7 @@ public class GameManager : MonoBehaviour
             switch (isBossTurn)
             {
                 case true: //Boss Turn ����
+                    bossTurn.gameObject.SetActive(true);
                     bossBattleTimer.gameObject.SetActive(false);
 
                     if (firstCard == null && secondCard == null)
@@ -95,16 +94,17 @@ public class GameManager : MonoBehaviour
                     break;
 
                 case false: //�÷��̾� �� 
+                    bossTurn.gameObject.SetActive(false);
                     bossBattleTimer.gameObject.SetActive(true);
 
                     totalTime -= Time.deltaTime;
-                    bossBattleTimer.PrintTimerBar(totalTime, bossBattleTime);
+                    bossBattleTimer.PrintTimerBar(totalTime, PlayerTurnTime);
 
                     if (totalTime <= 0)
                     {
                         CardReset();
                         isBossTurn = !isBossTurn; //�� ��ü
-                        totalTime = bossBattleTime;
+                        totalTime = PlayerTurnTime;
                     }
                     break; 
             }
@@ -224,7 +224,7 @@ public class GameManager : MonoBehaviour
         if (isBoss)
         {
             isBossTurn = !isBossTurn; //�� ��ü
-            totalTime = bossBattleTime;
+            totalTime = PlayerTurnTime;
         }
 
         
