@@ -18,6 +18,7 @@ public class UI_StageBtn : MonoBehaviour
         StageLabel.text = "Stage" + stageNum.ToString();
     }
 
+    // UI_StageBtnÀÇ UnLock ÇÔ¼ö
     public void UnLock()
     {
         UnLockStageBtn.SetActive(true);
