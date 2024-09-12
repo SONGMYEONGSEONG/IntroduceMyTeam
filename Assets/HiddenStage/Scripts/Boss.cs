@@ -98,6 +98,7 @@ public class Boss : MonoBehaviour
             for (int j = 0; j < 5; j++)
             {
                 ShootCircle();
+                yield return new WaitForSeconds(1f);
             }
 
             for (int i = 0; i < 10; i ++)
