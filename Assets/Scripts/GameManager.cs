@@ -7,6 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public GameObject timer;
+    public GameObject addTimeText;
+
+    public int cardCount;
+
     private void Awake()
     {
         if(Instance == null)
@@ -22,7 +27,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text ClearTimeLabelTxt;
     [SerializeField] Text clearTimeTxt;
 
-    //BossÀü º¯¼ö
+    //Bossï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     bool isBoss = false;
     bool isBossTurn = false; 
     [SerializeField] Boss boss;
@@ -65,7 +70,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        //ÀÏ¹Ý°ÔÀÓ
+        //ï¿½Ï¹Ý°ï¿½ï¿½ï¿½
         if (isplayed && !isBoss)
         {
             if (totalTime <= 0)
@@ -77,12 +82,12 @@ public class GameManager : MonoBehaviour
             timerPrint.PrintTimer(totalTime);
         }
 
-        //º¸½ºÀü
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if(isplayed && isBoss)
         {
             switch (isBossTurn)
             {
-                case true: //Boss Turn ÁøÇà
+                case true: //Boss Turn ï¿½ï¿½ï¿½ï¿½
                     bossBattleTimer.gameObject.SetActive(false);
 
                     if (firstCard == null && secondCard == null)
@@ -91,7 +96,7 @@ public class GameManager : MonoBehaviour
                     }
                     break;
 
-                case false: //ÇÃ·¹ÀÌ¾î ÅÏ 
+                case false: //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ 
                     bossBattleTimer.gameObject.SetActive(true);
 
                     totalTime -= Time.deltaTime;
@@ -100,7 +105,7 @@ public class GameManager : MonoBehaviour
                     if (totalTime <= 0)
                     {
                         CardReset();
-                        isBossTurn = !isBossTurn; //ÅÏ ±³Ã¼
+                        isBossTurn = !isBossTurn; //ï¿½ï¿½ ï¿½ï¿½Ã¼
                         totalTime = bossBattleTime;
                     }
                     break; 
@@ -152,9 +157,12 @@ public class GameManager : MonoBehaviour
         {
             AudioManager.Instance.PlaySFX("match");
 
-            //ÆÄ±«
+            //ï¿½Ä±ï¿½
             firstCard.InvokeDestroyCard();
             secondCard.InvokeDestroyCard();
+            timer.GetComponent<UI_Timer_print>().AddTime(5);
+            addTimeText.GetComponent<TextFade>().StartFadeToZero();
+
             cardCount -= 2;
 
             if (isBoss)
@@ -207,13 +215,13 @@ public class GameManager : MonoBehaviour
             secondCard.CloseCard();  
         }
 
-        //±âÁ¸ µ¥ÀÌÅÍ ÃÊ±âÈ­
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
         firstCard = null;
         secondCard = null;
 
         if (isBoss)
         {
-            isBossTurn = !isBossTurn; //ÅÏ ±³Ã¼
+            isBossTurn = !isBossTurn; //ï¿½ï¿½ ï¿½ï¿½Ã¼
             totalTime = bossBattleTime;
         }
 

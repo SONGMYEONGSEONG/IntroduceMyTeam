@@ -12,4 +12,8 @@ public class UI_Timer_print : MonoBehaviour
         timerTxt.text = time.ToString("N2");
     }
 
+    public void AddTime(int bonusTime)
+    {
+        this.time += bonusTime;
+    }
 }

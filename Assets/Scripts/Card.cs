@@ -27,7 +27,7 @@ public class Card : MonoBehaviour
 
     public void OpenCard()
     {
-        if (!GameManager.Instance.IsBossTurn && GameManager.Instance.IsPlayed) //º¸½º ÅÏ¿¡´Â µ¿ÀÛÇÏÁö ¾Ê°Ô ¸·´Â Á¶°Ç¹®
+        if (!GameManager.Instance.IsBossTurn && GameManager.Instance.IsPlayed) //ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç¹ï¿½
         {
             anim.SetBool("isOpen", true);
             front.SetActive(true);
@@ -76,7 +76,7 @@ public class Card : MonoBehaviour
         Invoke("DestroyCard", 0.3f);
     }
 
-    public void CloseCard() //Ä«µå°¡ Æ²¸®´Ù¸é ´Ù½Ã µÚÁý´Â ÇÔ¼ö
+    public void CloseCard() //Ä«ï¿½å°¡ Æ²ï¿½ï¿½ï¿½Ù¸ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
     {
         Invoke("CloseCardInvoke", 0.5f);
     }
