@@ -625,6 +625,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1572801696}
     - target: {fileID: 3829489518424638328, guid: dcc83cf84945c0344aac7adb2f4246b9, type: 3}
+      propertyPath: bossFace
+      value: 
+      objectReference: {fileID: 2081936935}
+    - target: {fileID: 3829489518424638328, guid: dcc83cf84945c0344aac7adb2f4246b9, type: 3}
       propertyPath: bossTurn
       value: 
       objectReference: {fileID: 472318131}
