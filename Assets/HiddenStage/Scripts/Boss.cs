@@ -93,14 +93,12 @@ public class Boss : MonoBehaviour
     {
         while(true)
         {
-            for (int i = 0; i < 3; i++)
-            {
-                MakeCircle();
-            }
+            MakeCircle();
 
             for (int j = 0; j < 5; j++)
             {
                 ShootCircle();
+                yield return new WaitForSeconds(1f);
             }
 
             for (int i = 0; i < 10; i ++)
