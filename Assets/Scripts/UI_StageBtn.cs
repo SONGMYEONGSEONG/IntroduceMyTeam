@@ -2,12 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UI_StageBtn : MonoBehaviour
 {
     [SerializeField] GameObject UnLockStageBtn;
     [SerializeField] GameObject LockStageBtn;
     [SerializeField] int stageNum;
+    [SerializeField] Text StageLabel;
+
+    public int StageNum { set { stageNum = value; } }
+
+    private void Start()
+    {
+        StageLabel.text = "Stage" + stageNum.ToString();
+    }
 
     public void UnLock()
     {

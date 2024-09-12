@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
       propertyPath: stages.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
       propertyPath: stages.Array.data[0].isBoss
@@ -149,11 +149,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
       propertyPath: stages.Array.data[2].isBoss
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
       propertyPath: stages.Array.data[3].isBoss
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
       propertyPath: stages.Array.data[0].isClear
@@ -172,16 +172,28 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
-      propertyPath: stages.Array.data[0].boardHeight
+      propertyPath: stages.Array.data[3].stageNum
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
+      propertyPath: stages.Array.data[0].boardWidth
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
+      propertyPath: stages.Array.data[2].boardWidth
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
+      propertyPath: stages.Array.data[0].boardHeight
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
       propertyPath: stages.Array.data[1].boardHeight
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7564834269858969807, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
       propertyPath: stages.Array.data[2].boardHeight
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8293445945688849400, guid: efcd38dcbd6c3ef468a9f6710a1c4e06, type: 3}
       propertyPath: m_LocalPosition.x
