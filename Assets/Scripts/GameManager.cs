@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
     public Card firstCard;
     public Card secondCard;
 
+    public GameObject timer;
+    public GameObject addTimeText;
+
+    public int cardCount;
+
     private void Awake()
     {
         if(Instance == null)
@@ -17,7 +22,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
     }
-
 
 
     private void Update()
@@ -31,6 +35,15 @@ public class GameManager : MonoBehaviour
         {
             firstCard.DestroyCard();
             secondCard.DestroyCard();
+            timer.GetComponent<UI_Timer_print>().AddTime(5);
+            addTimeText.GetComponent<TextFade>().StartFadeToZero();
+
+            cardCount -= 2;
+
+            if (cardCount == 0)
+            {
+                GameOver();
+            }
         }
         else
         {
@@ -40,6 +53,11 @@ public class GameManager : MonoBehaviour
 
         firstCard = null;
         secondCard = null;
+    }
+
+    public void GameOver()
+    {
+
     }
 }
 
