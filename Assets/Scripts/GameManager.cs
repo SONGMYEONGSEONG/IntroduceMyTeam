@@ -7,10 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public GameObject timer;
-    public GameObject addTimeText;
-
-    public int cardCount;
+    
 
     private void Awake()
     {
@@ -26,6 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject gameOverPopUp;
     [SerializeField] Text ClearTimeLabelTxt;
     [SerializeField] Text clearTimeTxt;
+    [SerializeField] GameObject addTimeText;
 
     //Boss�� ����
     bool isBoss = false;
@@ -160,8 +158,6 @@ public class GameManager : MonoBehaviour
             //�ı�
             firstCard.InvokeDestroyCard();
             secondCard.InvokeDestroyCard();
-            timer.GetComponent<UI_Timer_print>().AddTime(5);
-            addTimeText.GetComponent<TextFade>().StartFadeToZero();
 
             cardCount -= 2;
 
@@ -179,6 +175,12 @@ public class GameManager : MonoBehaviour
                         playerScoreTxt.text = playerScore.ToString();
                         break;
                 }
+            }
+            else
+            {
+                totalTime += 5.0f;
+                //timer.GetComponent<UI_Timer_print>().AddTime(5);
+                addTimeText.GetComponent<TextFade>().StartFadeToZero();
             }
             
             if (cardCount == 0)
