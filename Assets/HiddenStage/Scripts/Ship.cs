@@ -13,7 +13,7 @@ public class Ship : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
-        StartCoroutine(MakeBullet());
+        StartCoroutine(MakeBullet(anim.GetBool("isHit")));
     }
 
     // Update is called once per frame
@@ -46,13 +46,13 @@ public class Ship : MonoBehaviour
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             anim.SetBool("isHit", true);
-            StopCoroutine(MakeBullet());
+            AudioManager.instance.StopBgm();
         }
     }
 
-    IEnumerator MakeBullet()
+    IEnumerator MakeBullet(bool _false)
     {
-        while(true)
+        while(_false == false)
         {
             AudioManager.Instance.PlaySFX("shoot");
             float x = transform.position.x;

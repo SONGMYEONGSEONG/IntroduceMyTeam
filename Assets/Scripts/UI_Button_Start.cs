@@ -9,4 +9,10 @@ public class UI_Button_Start : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene");
     }
+
+    public void ReturnToBaseTitle()
+    {
+        SceneManager.LoadScene("TitleScene");
+        AudioManager.instance.PlayBgm("bgmusic");
+    }
 }
