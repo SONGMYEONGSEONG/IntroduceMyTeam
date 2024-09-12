@@ -570,9 +570,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2925848781384496449, guid: 70d1e76aacd0d4e4184cb2e4578b4256, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3402819708488737401, guid: 70d1e76aacd0d4e4184cb2e4578b4256, type: 3}
       propertyPath: bgm.Array.size
-      value: 5
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402819708488737401, guid: 70d1e76aacd0d4e4184cb2e4578b4256, type: 3}
+      propertyPath: sfx.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3402819708488737401, guid: 70d1e76aacd0d4e4184cb2e4578b4256, type: 3}
       propertyPath: bgm.Array.data[1]
@@ -590,13 +598,21 @@ PrefabInstance:
       propertyPath: bgm.Array.data[4]
       value: 
       objectReference: {fileID: 8300000, guid: 0d36fdcfb5980b04588734f670687a42, type: 3}
+    - target: {fileID: 3402819708488737401, guid: 70d1e76aacd0d4e4184cb2e4578b4256, type: 3}
+      propertyPath: bgm.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 635ed72333ea3004d8999cb0d26a16dc, type: 3}
+    - target: {fileID: 3402819708488737401, guid: 70d1e76aacd0d4e4184cb2e4578b4256, type: 3}
+      propertyPath: sfx.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 82f09bb07fa449e48a7d9c6651ff8eba, type: 3}
     - target: {fileID: 4799699029205257075, guid: 70d1e76aacd0d4e4184cb2e4578b4256, type: 3}
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 4987854336467179718, guid: 70d1e76aacd0d4e4184cb2e4578b4256, type: 3}
       propertyPath: m_Volume
-      value: 0.1
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 5490315111167508911, guid: 70d1e76aacd0d4e4184cb2e4578b4256, type: 3}
       propertyPath: m_LocalPosition.x
