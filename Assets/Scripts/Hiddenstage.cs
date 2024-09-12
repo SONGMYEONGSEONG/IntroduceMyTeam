@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -7,22 +8,37 @@ using UnityEngine.UI;
 
 public class Hiddenstage : MonoBehaviour
 {
+    public static Hiddenstage Instance;
     public InputField hiddenKeyInput;
     public GameObject inputField;
     bool shown = false;
+    public Vector3 playerPos;
+    public Vector3 bossPos;
 
     private string getKey;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
+    private void Start()
+    {
+
+    }
+
     void Update()
     {
-        
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             inputField.SetActive(!shown);
             Time.timeScale = 0.0f;
             getKey = hiddenKeyInput.text;
         }
-        
+
     }
 
 
@@ -42,5 +58,5 @@ public class Hiddenstage : MonoBehaviour
         Time.timeScale = 1.0f;
         inputField.SetActive(false);
     }
-    
+
 }

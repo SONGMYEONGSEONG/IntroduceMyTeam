@@ -10,7 +10,8 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.up * speed;
-        if (transform.position.y > 6 || transform.position.x > 3.5 || transform.position.x < -3.5)
+        if (transform.position.y > 6 || transform.position.y < -6 ||
+            transform.position.x > 3.5 || transform.position.x < -3.5)
         {
             Destroy(gameObject);
         }
