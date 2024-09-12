@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     //Boss�� ����
     bool isBoss = false;
     bool isBossTurn = false; 
-    [SerializeField] Boss boss;
+    [SerializeField] BossFace bossFace;
     public bool IsBossTurn { get { return isBossTurn; } }
     public int bossScore = 0;
     int playerScore = 0;
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
             isBossTurn = true;
             timerPrint.gameObject.SetActive(false);
             clearTimeTxt.gameObject.SetActive(false);
-            boss.gameObject.SetActive(true);
+            bossFace.gameObject.SetActive(true);
             bossScoreTxt.gameObject.SetActive(true);
             playerScoreTxt.gameObject.SetActive(true);
             totalTime = PlayerTurnTime;
@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
 
                     if (firstCard == null && secondCard == null)
                     {
-                        boss.BossPlay();
+                        bossFace.BossPlay();
                     }
                     break;
 

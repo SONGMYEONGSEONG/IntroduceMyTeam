@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class Boss : MonoBehaviour
+public class BossFace : MonoBehaviour
 {
     [SerializeField] Board board;
 
