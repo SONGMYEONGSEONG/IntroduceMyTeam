@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         //DebugCode
-        if(Input.GetKeyDown(KeyCode.F1))
+        if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             isplayed = false;
             switch (isBoss)
@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
                     break;
             }
         }
-        if (Input.GetKeyDown(KeyCode.F2))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             GameOver();
         }
