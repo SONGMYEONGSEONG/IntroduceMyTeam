@@ -126,8 +126,8 @@ public class GameManager : MonoBehaviour
                     bossTurn.gameObject.SetActive(false);
                     bossBattleTimer.gameObject.SetActive(true);
 
-                    totalTime -= Time.deltaTime;
                     bossBattleTimer.PrintTimerBar(totalTime, PlayerTurnTime);
+                    totalTime -= Time.deltaTime;
 
                     if (totalTime <= 0)
                     {
