@@ -66,6 +66,35 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        //DebugCode
+        if(Input.GetKeyDown(KeyCode.F1))
+        {
+            isplayed = false;
+            switch (isBoss)
+            {
+                case true:
+                    bossFace.gameObject.SetActive(false);
+                    bossScoreTxt.gameObject.SetActive(false);
+                    playerScoreTxt.gameObject.SetActive(false);
+                    bossTurn.gameObject.SetActive(false);
+                    bossBattleTimer.gameObject.SetActive(false);
+                    bossFace.gameObject.SetActive(false);
+
+                    gameClearPopUp.gameObject.SetActive(true);
+                    DataManager.Instance.SetCurStgaeIsClear();
+                    break;
+                case false:
+                    clearTimeTxt.text = totalTime.ToString("N2");
+                    gameClearPopUp.gameObject.SetActive(true);
+                    DataManager.Instance.SetCurStgaeIsClear();
+                    break;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            GameOver();
+        }
+
         //�Ϲݰ���
         if (isplayed && !isBoss)
         {
@@ -187,11 +216,19 @@ public class GameManager : MonoBehaviour
             {
                 OffUI();
                 isplayed = false;
+
                 switch (isBoss)
                 {
                     case true:
 
-                        if(playerScore > bossScore)
+                        bossFace.gameObject.SetActive(false);
+                        bossScoreTxt.gameObject.SetActive(false);
+                        playerScoreTxt.gameObject.SetActive(false);
+                        bossTurn.gameObject.SetActive(false);
+                        bossBattleTimer.gameObject.SetActive(false);
+                        bossFace.gameObject.SetActive(false);
+
+                        if (playerScore > bossScore)
                         {
                             gameClearPopUp.gameObject.SetActive(true);
                             DataManager.Instance.SetCurStgaeIsClear();
