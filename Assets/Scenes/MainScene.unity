@@ -397,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3198451204711251493, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3849467291548163090, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
       propertyPath: m_SizeDelta.y
@@ -509,7 +509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5860269777184572977, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6210129873329959656, guid: 0960a0332750d9b4abf16f1d6e134c3b, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1214,7 +1214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4466190209900182357, guid: 2c2ac85373820ed418187be6f8b8c385, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5413422038590005000, guid: 2c2ac85373820ed418187be6f8b8c385, type: 3}
       propertyPath: board
